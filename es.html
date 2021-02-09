@@ -1,0 +1,47 @@
+<!--<html>
+    <head>
+        <title>Ripasso</title>
+    </head>
+    <body>
+        <h1> Ripasso</h1>
+        <h3>Attraverso due pulsanti cambiare colore di un quadrato</h3>
+        <br />
+        <div id="div1" style="height: 200px; width: 200px; border-style: solid">
+         </div>
+         <button id="btn1">Verde</button>
+         <button id="btn2">Rosso</button>
+         <script>
+            
+            document.getElementById("btn1").addEventListener("click", function(){
+                document.getElementById("div1").setAttribute("style", "height: 200px; width: 200px; border-style: solid; background-color: green");
+            });
+            document.getElementById("btn2").addEventListener("click", function(){
+                document.getElementById("div1").setAttribute("style", "height: 200px; width: 200px; border-style: solid; background-color: red");
+            });
+         </script>
+    </body>
+</html>-->
+
+<html>
+    <head>
+        <title>Ripasso</title>
+    </head>
+    <body>
+        <h1> Ripasso</h1>
+        <h3>Attraverso due pulsanti cambiare colore di un quadrato</h3>
+        <br />
+        <div id="div1" style="height: 200px; width: 200px; border-style: solid">
+         </div>
+         <button id="btn1">Scegli colore</button>
+         <input id="input" type="text">
+         
+         <script>
+            var a = document.getElementById("input").value;
+            
+            document.getElementById("btn1").addEventListener("click", function(){
+                document.getElementById("div1").setAttribute("style", "height: 200px; width: 200px; border-style: solid; background-color: a");
+            });
+            
+         </script>
+    </body>
+</html>

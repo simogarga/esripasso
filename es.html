@@ -20,28 +20,134 @@
             });
          </script>
     </body>
-</html>-->
+</html>
 
 <html>
-    <head>
-        <title>Ripasso</title>
-    </head>
-    <body>
-        <h1> Ripasso</h1>
-        <h3>Attraverso due pulsanti cambiare colore di un quadrato</h3>
-        <br />
-        <div id="div1" style="height: 200px; width: 200px; border-style: solid">
-         </div>
-         <button id="btn1">Scegli colore</button>
-         <input id="input" type="text">
-         
-         <script>
-            var a = document.getElementById("input").value;
-            
-            document.getElementById("btn1").addEventListener("click", function(){
-                document.getElementById("div1").setAttribute("style", "height: 200px; width: 200px; border-style: solid; background-color: a");
+  <head>
+    <title>ripasso</title>
+  </head>
+  <body>
+    <h1>ripasso</h1>
+    <h3>attraverso due pulsanti cambiare il colore di un quadrato</h3>
+    <br />
+    <div
+      id="div1"
+      style="
+        height: 100px;
+        width: 100px;
+        border-color: black;
+        border-style: solid;
+      "
+    ></div>
+    <button id="btnVerde">Verde</button>
+    <button id="btnRosso">Rosso</button>
+    <button id="btnBianco">Bianco</button>
+
+    <script>
+      document.getElementById("btnRosso").addEventListener("click",function(){
+        changeColor("red")
+      });
+        document.getElementById("btnVerde").addEventListener("click", function(){
+            changeColor("green")
             });
-            
-         </script>
-    </body>
+
+            document.getElementById("btnBianco").addEventListener("click", function(){
+                changeColor("white");
+            });
+
+      var changeColor = function (c) {
+        document.getElementById("div1").setAttribute("style",
+            "height: 100px;width: 100px;border-color: black;" +
+              "border-style: solid;background-color : " +
+              c
+          );
+      };
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <title>ripasso</title>
+  </head>
+  <body>
+    <h1>ripasso</h1>
+    <h3>attraverso due pulsanti cambiare il colore di un quadrato</h3>
+    <br />
+    <div
+      id="div1"
+      style="
+        height: 100px;
+        width: 100px;
+        border-color: black;
+        border-style: solid;
+        background-color: rgb(255, 255, 255)
+        
+      "
+    ></div>
+   Rosso: <input type="number" id="red"><button id="piur">+</button><button id="menor">-</button><br>
+Verde: <input type="number" id="green"><button id="piug">+</button><button id="menog">-</button><br>
+   Blu: <input type="number" id="blue"><button id="piub">+</button><button id="menob">-</button ><br>
+   Conferma: <input type="button" id="conferma">
+
+    <script>
+      document.getElementById("conferma").addEventListener("click",function(){
+        var rgb = document.getElementById("red").value+", "+document.getElementById("green").value+", "+document.getElementById("blue").value;
+       console.log(rgb); 
+       changeColor(rgb);
+      });
+
+      document.getElementById("piur").addEventListener("click",function(){
+       var mod = document.getElementById("red").value;
+       mod++;
+       console.log(mod);
+       document.getElementById("red").value=mod;
+      });
+
+      document.getElementById("menor").addEventListener("click",function(){
+       var mod = document.getElementById("red").value;
+       mod--;
+       console.log(mod);
+       document.getElementById("red").value=mod;
+      });
+      document.getElementById("piug").addEventListener("click",function(){
+       var mod = document.getElementById("green").value;
+       mod++;
+       console.log(mod);
+       document.getElementById("green").value=mod;
+      });
+
+      document.getElementById("menog").addEventListener("click",function(){
+       var mod = document.getElementById("green").value;
+       mod--;
+       console.log(mod);
+       document.getElementById("green").value=mod;
+      });
+      document.getElementById("piub").addEventListener("click",function(){
+       var mod = document.getElementById("blue").value;
+       mod++;
+       console.log(mod);
+       document.getElementById("blue").value=mod;
+      });
+
+      document.getElementById("menob").addEventListener("click",function(){
+       var mod = document.getElementById("blue").value;
+       mod--;
+       console.log(mod);
+       document.getElementById("blue").value=mod;
+      });
+
+
+      
+
+
+      var changeColor = function (c) {
+        document.getElementById("div1").setAttribute("style",
+            "height: 100px;width: 100px;border-color: black;" +
+              "border-style: solid; background-color: rgb("+c+")"
+              
+          );
+      };
+    </script>
+  </body>
 </html>
